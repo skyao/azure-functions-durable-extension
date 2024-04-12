@@ -5033,6 +5033,21 @@
             Trigger attribute used for durable orchestrator functions.
             </summary>
         </member>
+        <member name="F:Microsoft.Azure.WebJobs.Extensions.DurableTask.OrchestrationTriggerAttribute.DEFAULTVERSION">
+            <summary>
+            default version of the orchestrator function if not specified.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.WebJobs.Extensions.DurableTask.OrchestrationTriggerAttribute.#ctor">
+            <summary>
+            Creates an instance of Microsoft.Azure.WebJobs.Extensions.DurableTask.OrchestrationTriggerAttribute.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.WebJobs.Extensions.DurableTask.OrchestrationTriggerAttribute.#ctor(System.String)">
+            <summary>
+            Creates an instance of Microsoft.Azure.WebJobs.Extensions.DurableTask.OrchestrationTriggerAttribute with specified version.
+            </summary>
+        </member>
         <member name="P:Microsoft.Azure.WebJobs.Extensions.DurableTask.OrchestrationTriggerAttribute.Orchestration">
             <summary>
             Gets or sets the name of the orchestrator function.
@@ -5042,6 +5057,17 @@
             </remarks>
             <value>
             The name of the orchestrator function or <c>null</c> to use the function name.
+            </value>
+        </member>
+        <member name="P:Microsoft.Azure.WebJobs.Extensions.DurableTask.OrchestrationTriggerAttribute.Version">
+            <summary>
+            Gets or sets the version of the orchestrator function.
+            </summary>
+            <remarks>
+            If not specified, the function version will default to "1.0.0".
+            </remarks>
+            <value>
+            The version of the orchestrator function or <c>null</c> to use the default version "1.0.0".
             </value>
         </member>
         <member name="T:Microsoft.Azure.WebJobs.Extensions.DurableTask.TypedDurableClientBindingProvider">

@@ -55,9 +55,12 @@ internal class DurableTaskFunctionsMiddleware : IFunctionsWorkerMiddleware
             throw new InvalidOperationException("Orchestration history state was either missing from the input or not a string value.");
         }
 
+        // TBD: get instanceVersion from context
+        string instanceVersion = context.FunctionInstanceVersion;
+
         FunctionsOrchestrator orchestrator = new(context, next, triggerInputData);
         string orchestratorOutput = GrpcOrchestrationRunner.LoadAndRun(
-            encodedOrchestratorState, orchestrator, context.InstanceServices);
+            encodedOrchestratorState, orchestrator, instanceVersion, context.InstanceServices);
 
         // Send the encoded orchestrator output as the return value seen by the functions host extension
         context.GetInvocationResult().Value = orchestratorOutput;

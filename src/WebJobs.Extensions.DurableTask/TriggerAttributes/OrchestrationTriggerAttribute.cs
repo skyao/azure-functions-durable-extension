@@ -22,6 +22,27 @@ namespace Microsoft.Azure.WebJobs.Extensions.DurableTask
     public sealed class OrchestrationTriggerAttribute : Attribute
     {
         /// <summary>
+        /// default version of the orchestrator function if not specified.
+        /// </summary>
+        public const string DEFAULTVERSION = "1.0.0";
+
+        /// <summary>
+        /// Creates an instance of Microsoft.Azure.WebJobs.Extensions.DurableTask.OrchestrationTriggerAttribute.
+        /// </summary>
+        public OrchestrationTriggerAttribute()
+        {
+            Version = DEFAULTVERSION;
+        }
+
+        /// <summary>
+        /// Creates an instance of Microsoft.Azure.WebJobs.Extensions.DurableTask.OrchestrationTriggerAttribute with specified version.
+        /// </summary>
+        public OrchestrationTriggerAttribute(string version)
+        {
+            Version = version;
+        }
+
+        /// <summary>
         /// Gets or sets the name of the orchestrator function.
         /// </summary>
         /// <remarks>
@@ -34,5 +55,19 @@ namespace Microsoft.Azure.WebJobs.Extensions.DurableTask
         [AutoResolve]
 #pragma warning restore CS0618 // Type or member is obsolete
         public string Orchestration { get; set; }
+
+        /// <summary>
+        /// Gets or sets the version of the orchestrator function.
+        /// </summary>
+        /// <remarks>
+        /// If not specified, the function version will default to "1.0.0".
+        /// </remarks>
+        /// <value>
+        /// The version of the orchestrator function or <c>null</c> to use the default version "1.0.0".
+        /// </value>
+#pragma warning disable CS0618 // Type or member is obsolete
+        [AutoResolve]
+#pragma warning restore CS0618 // Type or member is obsolete
+        public string Version { get; set; }
     }
 }

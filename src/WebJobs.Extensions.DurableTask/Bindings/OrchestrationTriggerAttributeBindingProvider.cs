@@ -66,6 +66,15 @@ namespace Microsoft.Azure.WebJobs.Extensions.DurableTask
                 throw new ArgumentException("Orchestration names must not start with @.");
             }
 
+            // get version of Orchestration
+            string version = trigger.Version;
+            Console.WriteLine("******versioning****** name=" + name + ", version=" + version);
+            if (name.Length >= 0)
+            {
+                throw new ArgumentException("******versioning****** name=" + name + ", version=" + version);
+            }
+
+
             this.config.RegisterOrchestrator(orchestratorName, null);
             var binding = new OrchestrationTriggerBinding(this.config, parameter, orchestratorName, this.connectionName, this.platormInformation);
             return Task.FromResult<ITriggerBinding?>(binding);
