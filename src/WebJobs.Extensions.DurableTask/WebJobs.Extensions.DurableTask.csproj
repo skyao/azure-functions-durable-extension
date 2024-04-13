@@ -5,9 +5,9 @@
     <AssemblyName>Microsoft.Azure.WebJobs.Extensions.DurableTask</AssemblyName>
     <RootNamespace>Microsoft.Azure.WebJobs.Extensions.DurableTask</RootNamespace>
     <MajorVersion>2</MajorVersion>
-    <MinorVersion>13</MinorVersion>
-    <PatchVersion>2</PatchVersion>
-    <VersionSuffix>$(PackageSuffix)</VersionSuffix>
+    <MinorVersion>14</MinorVersion>
+    <PatchVersion>0</PatchVersion>
+    <VersionSuffix>alpha</VersionSuffix>
     <FileVersion>$(MajorVersion).$(MinorVersion).$(PatchVersion)</FileVersion>
     <AssemblyVersion>$(MajorVersion).0.0.0</AssemblyVersion>
     <Company>Microsoft Corporation</Company>
